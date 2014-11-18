@@ -9,7 +9,7 @@ import org.elasticsearch.test.ElasticsearchIntegrationTest.Scope;
 import org.junit.Test;
 
 @ClusterScope(scope = Scope.SUITE, numDataNodes = 0)
-public class SampleTest extends ElasticsearchIntegrationTest{
+public class SampleTest extends ElasticsearchIntegrationTest {
     static {
         ClassLoader.getSystemClassLoader()
                    .setDefaultAssertionStatus(true);
