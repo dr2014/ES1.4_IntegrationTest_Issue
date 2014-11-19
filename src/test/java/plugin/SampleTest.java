@@ -3,6 +3,7 @@ package plugin;
 import static org.elasticsearch.common.settings.ImmutableSettings.settingsBuilder;
 
 import org.elasticsearch.common.settings.Settings;
+import org.elasticsearch.plugins.PluginsService;
 import org.elasticsearch.test.ElasticsearchIntegrationTest;
 import org.elasticsearch.test.ElasticsearchIntegrationTest.ClusterScope;
 import org.elasticsearch.test.ElasticsearchIntegrationTest.Scope;
@@ -20,7 +21,8 @@ public class SampleTest extends ElasticsearchIntegrationTest {
         // set plugin.types to load this plugin
         return settingsBuilder()
                 .put(super.nodeSettings(nodeOrdinal))
-                .put("plugin.types", TestESPlugin.class.getName())
+                .put("plugins." + PluginsService.LOAD_PLUGIN_FROM_CLASSPATH, true)
+                //.put("plugin.types", TestESPlugin.class.getName())
                 .build();        
     }
 
